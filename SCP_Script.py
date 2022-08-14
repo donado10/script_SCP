@@ -13,9 +13,7 @@ username = 'username'
 password = 'password'
 ssh.connect(hostname= hostname,port = port, username = username, password = password,look_for_keys=False, allow_agent=False)
 
-
 scp = SCPClient(ssh.get_transport())
-
 
 path_linux = '/home/ado/'
 path_windows = 'C:\\Users\\LBC\\Documents\\Projet_Mémoire\\'
@@ -39,7 +37,7 @@ while option != 3:
         scp.put(path_windows + folder, recursive=True, remote_path=path_linux)
         print("Upload over ...!!")
     elif option == 2:
-        scp.get(remote_path= path_linux + folder,recursive=True,local_path=path_windows)
+        scp.get(remote_path= path_linux + folder, recursive=True, local_path=path_windows)
         print("Download over ...!!")
     elif option == 3:
         print("Closing...")
